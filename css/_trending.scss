@@ -1,0 +1,81 @@
+.trending{
+    margin: 100px 0;
+    .container{
+        @include flex(50px, column);
+    }
+    .top{
+        text-align: center;
+        width: 100%;
+        ul{
+            @include flex(0, 0, 0, space-between);
+            width: 50%;
+            margin: 0 auto;
+            padding: 0;
+        }
+    }
+    .cards{
+        @include grid(1fr 1fr 1fr 1fr, auto, 20px, 20px);
+        .card{
+            .plar{
+                @include flex(0, 0, 0, space-between);
+                flex-wrap: wrap;
+                i{
+                    color:#7AC751;
+                    font-size: 12px;
+                }
+                p{
+                    color: #7AC751;
+                }
+                span{
+                    text-decoration: line-through;
+                    color: grey;
+                }
+            }
+            h3{
+                margin: 10px 0;
+            }
+            img{
+                width: 100%;
+            }
+            .img{
+                position: relative;
+                p{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    color: white;
+                    padding: 5px 15px;
+                    background-color: #7AC751;
+                    border-radius: 0px 0px 5px 0px;
+                }
+                i{
+                    padding: 10px;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 20%;
+                    right: 5px;
+                    background-color: white;
+                }
+                i:hover{
+                    background-color: #7AC751;
+                    color: white;
+                }
+                i:nth-child(4){
+                    top: 35%;
+                }
+            }
+        }
+    }
+    @media (max-width: 1000px) {
+        .cards{
+            @include grid( 1fr 1fr, auto, 10px, 10px);
+        }
+    }
+    @media (max-width: 800px) {
+        .top{
+            ul{
+                width: 70%;
+            }
+        }
+    }
+}

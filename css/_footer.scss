@@ -1,0 +1,28 @@
+footer{
+    .container{
+        .top{
+            @include grid(30% 1fr 1fr 1fr, auto, 20px, 20px);
+            border-bottom: 1px solid black;
+            padding-bottom: 50px;
+            .media{
+                @include flex(20px, 0, 0, start);
+            }
+            .text{
+                @include flex(20px, column, start);
+            }
+        }
+        .bottom{
+            @include flex(0, 0, center, space-between);
+            ul{
+                @include flex(20px, 0, center, center);
+            }
+        }
+    }
+    @media (max-width: 800px) {
+        .container{
+            .top{
+                @include grid(1fr 1fr, auto, 20px, 20px);
+            }
+        }
+    }
+}

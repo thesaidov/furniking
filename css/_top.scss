@@ -1,0 +1,26 @@
+.top_collections{
+    h3{
+        margin: 0;
+    }
+    .container{
+        @include flex(20px, row);
+    }
+    .text{
+        @include flex(20px, column, start);
+        button{
+            padding: 10px 15px;   
+            background: #7AC751;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+    }
+    .right{
+        @include grid(1fr 1fr, auto);
+        text-align: center;
+        img{
+            grid-row: 1/4;
+        }
+    }
+}

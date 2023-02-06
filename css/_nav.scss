@@ -1,0 +1,119 @@
+.resp{
+    @include flex(0, 0, 0, end);
+    padding: 20px;
+    display: none;
+    i{
+        font-size: 2rem;
+    }
+    @media (max-width:1000px) {
+        &{
+            display: flex;
+        }
+    }
+}
+#nav{
+    display: none;
+}
+#nav:checked~.nav{
+    left: 0;
+    transition: 0.6s;
+}
+.nav{ 
+    a{
+        text-decoration: none;
+    }
+    &_top{
+        background: #7AC751; 
+        .container{
+            @include flex(0, row, 0, space-between);
+            padding: 10px;
+            color: white;
+        } 
+        .right{
+            @include flex();
+            .lang{
+                padding: 0 10px;
+                button{
+                    background-color: #7AC751;
+                    border: none;
+                    color: white;
+                }
+            }
+            p{
+                padding: 0 20px;
+                border-left: 2.2px solid white;
+            }
+        }
+    }
+    &_middle{
+        .container{
+            @include flex(0, 0, 0, space-between);
+            padding: 15px;
+        }
+        .input{
+            @include flex();
+            border: 2px solid #7AC751;
+            border-radius: 8px;
+            input{
+                padding: 15px;
+                height: 90%;
+                border: none;
+            }
+            button{
+                height: 100%;
+            }
+            &>i{
+                color: white;
+                padding: 15px 20px;
+                background-color: #7AC751;
+            }
+        }
+        .icons{
+            @include flex(15px);
+            i{
+                font-size: 1.5rem;
+            }
+        }
+    }
+    &_bottom{
+        background-color: whitesmoke;
+        ul{
+            @include flex(0, 0, 0, space-between);
+            margin: 0;
+            padding: 0;
+            li{
+                padding: 15px;
+            }
+            li:hover{
+                background-color: #7AC751;
+            }
+        }
+    }
+    @media (max-width: 1000px) {
+        &{
+            position: fixed;
+            top: 0;
+            left: -120%;
+            transition: 0.6s;
+            width: 60vw;
+            height: 100vh;
+            background-color: white;
+            z-index: 1;
+        }
+        &_middle{
+            .container{
+                flex-direction: column;
+                gap: 20px;
+            }
+            .input{
+                @include grid(1fr 30% 10%, auto);
+            }
+        }
+        &_bottom{
+            ul{
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    }
+}
